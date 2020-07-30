@@ -74,7 +74,15 @@ object Utils {
 
         if (firstLitera == "null") firstLitera = " "
         if (lastLitera == "null") lastLitera = " "
-        return if (firstLitera == " " && lastLitera == " ") null else "$firstLitera$lastLitera"
+        return if (firstLitera == " " && lastLitera == " ") {
+            null
+        } else if (firstLitera == " ") {
+            lastLitera
+        } else if( lastLitera == " ") {
+            firstLitera
+        } else {
+            "$firstLitera$lastLitera"
+        }
 
     }
 }
